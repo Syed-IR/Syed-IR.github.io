@@ -1,0 +1,339 @@
+  @mixin flex-center() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* variables */
+  $orange: #EF4025;
+  $green: #1b5932;
+
+  body{
+    color: #333;
+    font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+  }
+
+
+  /* Style for our header texts
+  * --------------------------------------- */
+  h1{
+    font-size: 5em;
+    font-family: arial,helvetica;
+    margin:0;
+    padding:0;
+  }
+  h2{
+    font-size: 3em;
+    margin: 20px 0;
+    font-family: arial,helvetica;
+  }
+
+  h1, h2 {
+    color: $orange;
+  }
+
+  /* Common styles
+  * --------------------------------------- */
+
+  .section{
+    text-align:center;
+    overflow:hidden;
+  }
+  .wrap{
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+  }
+  .end {
+    width: 30px;
+    height: 30px;
+    color: white;
+    bottom: 10px;
+    right: 10px;
+    font-size: 0.7em;
+    border-radius: 50%;
+    position: absolute;
+    @include flex-center();
+    background-color: $green;
+  }
+
+  /* Section 0
+  * --------------------------------------- */
+  #section0{
+    .img-container {
+      height: 100%;
+    }
+    svg {
+      width: 100%;
+      max-width: 800px;
+    }
+  }
+
+  /* Section 1,2,3,4
+  * --------------------------------------- */
+  .PnS{
+    .wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .img-container {
+      width: 100%;
+      flex-grow: 1;
+      display: flex;
+      padding: 20px 0;
+      justify-content: center;
+    }
+    svg {
+      // max-width: 500px;
+      width: 100%;
+    }
+  }
+
+  /* Section 5
+  * --------------------------------------- */
+  #section5{
+    .wrap {
+      @include flex-center();
+      flex-direction: column;
+    }
+    .item img{
+      // max-height: 481px;
+      // max-width: 270px;
+    }
+  }
+
+  /* Section 5
+  * --------------------------------------- */
+  #section7 {
+    svg {
+      width: 100%;
+      rect {
+        // height: 0;
+        transition: 0.4s;
+      }
+    }
+  }
+  .grow {
+    transform: scale(1,0);
+    transform-origin: calc(3%) calc(86%);
+  }
+  @keyframes grow {
+    from {
+      transform: scale(1,0);
+    }
+    to {
+      transform: scale(1,1);
+    }
+  }
+  /* Section Team
+  * --------------------------------------- */
+  .row {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center
+  }
+  .col {
+    flex-basis: 50%;
+    padding: 0 15px;
+  }
+  .col:nth-child(1) {
+    .square {
+      margin-left: auto;
+    }
+  }
+  #him, #her {
+    animation-delay: 1s;
+  }
+  .square {
+    margin-bottom: 40px;
+    width: 100%;
+    height: 450px;
+    box-shadow: 0 0 12px 0 hsla(0, 0%, 0%, 0.2);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+
+    @media screen and (min-width: 500px) {
+      width: 400px;
+    }
+
+    @media screen and (max-width: 768px) {
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+  }
+
+  .body {
+    height: 80%;
+  }
+
+  .body-top {
+    height: 70%;
+    @include flex-center();
+    flex-direction: column;
+    align-items: center; 
+
+    img {
+      width: 200px;
+      margin-top: 30px;
+      border-radius: 50%;
+    }
+  }
+
+  .body-bottom {
+    height: 30%;
+    @include flex-center();
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h3, h5, h6 {
+    margin: 0;
+    color: $green;
+  }
+
+  h3 {
+    font-size: 2em;
+  }
+
+  h5 {
+    font-weight: bold;
+  }
+
+  .footer {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: $orange;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+
+    a {
+      margin: 0;
+      width: 55px;
+      height: 55px;
+      background-color: #fff;
+      text-decoration: none;
+      color: $green;
+      border-radius: 50%;
+      @include flex-center();
+      box-shadow: 0 12px 38px rgba(0, 0, 0, 0.3), 0 5px 12px rgba(0, 0, 0, 0.22);
+    }
+
+    i {
+      font-size: 1.2em;
+    }
+
+    img {
+      width: 30px;
+    }
+  }
+
+  /* #Section 9
+  * --------------------------------------- */
+  #section9 {
+    svg {
+      width: 90%;
+      margin: 0 auto;
+      position: relative;
+      display: block;
+      z-index: 0;
+      
+      text {
+        fill: #fff;
+        font-family: 'Oswald';
+        font-weight: 700;
+       
+        tspan {
+          padding: 0;
+          margin: 0;
+          opacity: 0 !important;
+        }
+      }
+      
+      line, polyline, ellipse, path {
+        stroke: $orange;
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 6;
+        opacity: 0;
+        stroke-miterlimit: 10;
+      }
+      
+      .dec {
+        stroke-width: 3;
+      }
+      
+      .underline {
+        stroke-width: 6;
+        stroke-linecap: butt;
+        opacity: 1;
+      }
+      
+      .dot {
+        opacity: 1;
+      }
+      
+      .purple {
+        stroke: $green;
+      }
+      
+      .lime {
+        stroke: #DCE2AA;
+      }
+      
+      .plum {
+        stroke: #be202e;
+      }
+      
+      .blue {
+        stroke: #01a1ff;
+      }
+    }
+  }
+
+
+  /* Overwriting fullPage.js tooltip color
+  * --------------------------------------- */
+  .fp-tooltip{
+    color: #EF4025 !important;
+  }
+  #fp-nav span, .fp-slidesNav span{
+    border-color: #1b5932 !important;
+  }
+  #fp-nav li .active span, .fp-slidesNav .active span{
+    background: #1b5932 !important;
+  }
+
+  .fp-prev, .fp-next {
+    display: none;
+  }
+
+  .layout-line {
+    stroke-dasharray: 10000;
+    stroke-dashoffset: 10000;
+  }
+
+  .path {
+    animation: dash 4s linear forwards;
+  }
+
+  .path2 {
+    animation: dash 5s linear forwards;
+    animation-delay: 1s;
+  }
+
+  @keyframes dash {
+    from {
+      stroke-dashoffset: 10000;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
