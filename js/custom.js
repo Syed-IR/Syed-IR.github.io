@@ -1,4 +1,6 @@
 $(document).ready(function(){
+  $('.pt1').addClass('path');
+  $('.pt2').addClass('path2');
 
   $('#fullpage').fullpage({
     'verticalCentered': false,

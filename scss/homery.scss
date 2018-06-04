@@ -321,13 +321,13 @@
   }
 
   .path {
-    animation-delay: 1s;
     animation: dash 4s linear forwards;
+    animation-delay: 1s !important;
   }
 
   .path2 {
     animation: dash 5s linear forwards;
-    animation-delay: 1.5s;
+    animation-delay: 1.5s !important;
   }
 
   @keyframes dash {
